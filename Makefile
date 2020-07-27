@@ -20,6 +20,11 @@ options:
 
 ${OBJ}: config.h config.mk arg.h util.h
 
+slock.o: theme.h
+
+theme.h:
+	cp theme.def.h $@
+
 config.h:
 	@echo creating $@ from config.def.h
 	@cp config.def.h $@
